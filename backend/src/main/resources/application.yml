@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+#  profiles: dev
+
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+
+  messages:
+    encoding: UTF-8
+
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/todolist
+      username: root
+      password: root
+      type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+## 该配置节点为独立的节点
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: xyz.huizhe.todo.todolist.model
+  configuration:
+    auto-mapping-unknown-column-behavior: warning
+    map-underscore-to-camel-case: true
