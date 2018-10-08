@@ -71,9 +71,3 @@ CREATE TABLE `userinfo` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_username` (`username`) USING BTREE
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of userinfo
--- ----------------------------
-INSERT INTO `userinfo` VALUES ('1', 'huizhe', '1415683583dc40b946863f0ef5df70ec', '2018-09-21 19:53:37', '833c3a5b96fe4209d4f56986aa733120');
-INSERT INTO `userinfo` VALUES ('2', 'huiz1231232123asdhe', 'root', '2018-09-20 21:20:09', '12asdasdas123');
